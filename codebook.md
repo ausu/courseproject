@@ -6,7 +6,12 @@ the Human Activity Recognition Using Smartphones Dataset
 Version 1.0 by Smartlab - Non Linear Complex Systems 
 Laboratory (www.smartlab.ws).
 
-## Variables in tidy dataset
+## Steps for generating tidy data set
+1. Merged the training and the test sets from Smarlab to create one data set.
+2. Extracted only the measurements on the mean and standard deviation for each measurement. 
+3. Calculated the average of each variable for each activity and each subject. 
+
+## Variables in tidy data set
 * **subjectID (integer)** : ID of volunteers (n=30)
 * **activityID (integer)** : ID of activities (n=6) performed by volunteers (see activityLabel)
 * **activityLabel (factor)** : Descriptive label of activityID (1=WALKING; 2="WALKING_UPSTAIRS", 3="WALKING_DOWNSTAIRS", 4="SITTING", 5="STANDING, 6="LAYING")
