@@ -3,13 +3,13 @@ Course Project
 
 Course Project for Getting and Cleaning Data (Coursera)
 
-This repo contains run_analysis.R (R script file) and codebook.md (codebook for tidy data set created after executing the R Script file).
+This repo contains tidyData.txt, run_analysis.R (R script file) and codebook.md (codebook for tidy data set created after executing the R Script file).
 
-## Data set
+## Original data set
 The data set for this project is the Human Activity Recognition Using Smartphones Data Set, which can be found at:   
 <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
 
-## run_analysis.R
+## run_analysis.R to process original data set to obtain tidyData.txt
 To use run_analysis.R, set the working directory using the setwd() command to the location of the data sets.
 
 1. Read in text files into R using read.table()
@@ -27,7 +27,7 @@ To use run_analysis.R, set the working directory using the setwd() command to th
 13. Use paste() to rename variables that are result of average calculation.
 14. Use write.table() to output data set to .txt, text file. 
 
-## codebook.md
+## codebook.md for tidyData.txt
 This file provides the list of variables and description of variables in the tidy data set. 
 
 
