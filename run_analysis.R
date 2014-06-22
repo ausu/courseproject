@@ -22,7 +22,6 @@ names(activityLabels) <- c("activityID","activityLabel")
 
 ## Assign labels to datasets
 # Label the data set with descriptive variable names
-# Descriptive activity names to name the activities in the data set
 names(trainSubject) <- c("subjectID")
 names(trainX) <- featuresLabels
 names(trainY) <- c("activityID")
@@ -39,6 +38,8 @@ trainData <- cbind(trainSubject, trainX, trainY); names(trainData)
 
 ## Merge the training and the test sets to create one data set
 allData <- rbind(testData,trainData); dim(allData)
+
+# Descriptive activity names to name the activities in the data set
 finalData <- join(allData, activityLabels, by ="activityID"); dim(finalData)
 names(finalData)
 
@@ -51,16 +52,19 @@ mstdData <- finalData[,c(1,563,564,search)] #create new dataset
 (names(mstdData))
 
 ## Tidy data set with averages
-# Create a second, independent tidy dahta set with the average of each variable 
+# Create a second, independent tidy data set with the average of each variable 
 # for each activity and each subject. 
 
 library(plyr)
 library(reshape2)
+
 tData <- mstdData
 
 # From wide to long format
 tMelt <- melt(tData, id=c("subjectID","activityID","activityLabel"), 
               measure.vars=c(4:89))
+
+# Average of each variable for each activity and each subject. 
 tMean <- ddply(tMelt, c("subjectID","activityID","activityLabel", "variable"), 
               summarize, mean=mean(value))
 
